@@ -1,5 +1,6 @@
 import React from 'react';
 import './HeroSection.css';
+import heroImage from '../assets/hero-students.png';
 
 const HeroSection = () => {
     const scrollToSection = (sectionId) => {
@@ -32,7 +33,7 @@ const HeroSection = () => {
                     </div>
                     <div className="hero-image-container animate-fadeIn">
                         <div className="image-wrapper">
-                            <img src="/src/assets/hero-students.png" alt="Sagarmatha Students" className="hero-img" />
+                            <img src={heroImage} alt="Sagarmatha Students" className="hero-img" />
                         </div>
                     </div>
                 </div>

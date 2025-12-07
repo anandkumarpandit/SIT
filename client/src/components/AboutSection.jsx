@@ -1,5 +1,6 @@
 import React from 'react';
 import './AboutSection.css';
+import aboutImage from '../assets/about-campus.png';
 
 const AboutSection = () => {
     return (
@@ -39,7 +40,7 @@ const AboutSection = () => {
 
                     <div className="about-image-container">
                         <div className="about-img-wrapper">
-                            <img src="/src/assets/about-campus.png" alt="Sagarmatha College Campus" />
+                            <img src={aboutImage} alt="Sagarmatha College Campus" />
                         </div>
                     </div>
                 </div>
