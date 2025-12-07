@@ -4,11 +4,12 @@
     "description": "Modern landing page for Sagarmatha Technical Institute - CTEVT Affiliated",
     "main": "server/server.js",
     "scripts": {
+        "start": "cd server && node server.js",
+        "build": "npm install && cd client && npm install && npm run build && cd ../server && npm install",
         "client": "cd client && npm run dev",
         "server": "cd server && npm run dev",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
-        "install-all": "npm install && cd client && npm install && cd ../server && npm install",
-        "build": "cd client && npm run build"
+        "install-all": "npm install && cd client && npm install && cd ../server && npm install"
     },
     "keywords": [
         "education",
