@@ -1,0 +1,121 @@
+.about-section {
+    background: #ffffff;
+    padding: var(--spacing-3xl) 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text-content {
+    padding-right: 2rem;
+}
+
+.about-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--primary-blue-ultra);
+    margin-bottom: 2rem;
+    font-family: serif;
+    font-weight: 800;
+}
+
+.highlight-gold {
+    color: var(--accent-gold);
+}
+
+.about-lead {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.about-desc {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.about-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.about-features-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.about-features-list li::before {
+    content: '•';
+    color: var(--primary-blue-light);
+    /* Green dot */
+    position: absolute;
+    left: 0;
+    top: -2px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.link-arrow-green {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    color: var(--primary-blue-light);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.link-arrow-green span {
+    font-size: 1.2rem;
+}
+
+.link-arrow-green:hover {
+    gap: 0.8rem;
+    color: var(--primary-blue);
+}
+
+/* Image Side */
+.about-image-container {
+    position: relative;
+}
+
+.about-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    /* Optional white border frame effect if needed, clean cut in reference */
+}
+
+.about-img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-text-content {
+        padding-right: 0;
+    }
+}

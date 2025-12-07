@@ -1,0 +1,91 @@
+.why-choose-section {
+    background: #ffffff;
+    padding: 2rem 0 var(--spacing-3xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-section::before {
+    display: none;
+}
+
+.features-grid {
+    gap: 4rem;
+}
+
+.feature-item {
+    text-align: left;
+    /* Changed to left align to match reference roughly, or center? Reference looks left-ish or center dependent on column width, but title has mdash prefix */
+    text-align: left;
+    padding: 0 1rem;
+}
+
+.feature-icon-circle {
+    width: 100px;
+    height: 100px;
+    background: #e8f5e9;
+    /* Light Green background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    transition: all var(--transition-medium);
+}
+
+.feature-emoji {
+    font-size: 3rem;
+    filter: grayscale(100%) opacity(0.7);
+    /* Muted look for icons */
+    transition: all var(--transition-medium);
+}
+
+.feature-item:hover .feature-icon-circle {
+    background: #c8e6c9;
+}
+
+.feature-item:hover .feature-emoji {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
+
+.feature-title-green {
+    color: var(--primary-blue-ultra);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-title-green span {
+    color: var(--primary-blue-light);
+    /* Green mdash */
+}
+
+.feature-desc-text {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .feature-item {
+        text-align: center;
+    }
+
+    .feature-icon-circle {
+        margin: 0 auto 1.5rem;
+    }
+
+    .feature-title-green {
+        justify-content: center;
+    }
+}

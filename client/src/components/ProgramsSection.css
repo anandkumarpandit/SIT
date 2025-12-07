@@ -1,0 +1,158 @@
+.programs-section {
+    background: var(--secondary-white);
+}
+
+.programs-grid {
+    margin-top: var(--spacing-xl);
+    grid-gap: 1.5rem;
+    /* Reduced gap */
+}
+
+.program-card {
+    padding: 1.5rem;
+    /* Reduced padding from spacing-xl */
+    text-align: center;
+    transition: all var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    background: white;
+    border-radius: 12px;
+    /* Slightly tighter radius */
+}
+
+/* Unique vibrant gradients for each program card */
+.program-card:nth-child(1) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.program-card:nth-child(2) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.program-card:nth-child(3) {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.program-card:nth-child(4) {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+}
+
+.program-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.program-card:hover::before {
+    opacity: 1;
+}
+
+.program-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    /* More subtle hover lift */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.program-icon {
+    font-size: 2.5rem;
+    /* Reduced from 4rem */
+    margin-bottom: 0.75rem;
+    /* Reduced margin */
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.program-title {
+    color: white;
+    margin-bottom: 0.75rem;
+    /* Reduced margin */
+    font-size: 1.2rem;
+    /* Reduced from 1.5rem */
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.program-meta {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    /* Reduced gap */
+    margin-bottom: 1rem;
+    /* Reduced margin */
+    flex-wrap: wrap;
+}
+
+.program-duration,
+.program-eligibility {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 0.3rem 0.8rem;
+    /* Reduced padding */
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    /* Reduced size */
+    font-weight: 600;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.program-description {
+    margin-bottom: 1rem;
+    /* Reduced margin */
+    line-height: 1.5;
+    min-height: 50px;
+    /* Reduced min-height */
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 400;
+    font-size: 0.9rem;
+    /* Slightly smaller text */
+}
+
+.program-card .btn {
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 0.6rem 1.5rem;
+    /* Smaller button */
+    font-size: 0.9rem;
+}
+
+.program-card .btn:hover {
+    background: white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-icon {
+        font-size: 2.2rem;
+    }
+
+    .program-title {
+        font-size: 1.1rem;
+    }
+
+    .program-card:hover {
+        transform: translateY(-3px) scale(1.01);
+    }
+}

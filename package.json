@@ -1,0 +1,24 @@
+{
+    "name": "sagarmatha-technical-institute",
+    "version": "1.0.0",
+    "description": "Modern landing page for Sagarmatha Technical Institute - CTEVT Affiliated",
+    "main": "server/server.js",
+    "scripts": {
+        "client": "cd client && npm run dev",
+        "server": "cd server && npm run dev",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+        "build": "cd client && npm run build"
+    },
+    "keywords": [
+        "education",
+        "ctevt",
+        "nepal",
+        "technical-institute"
+    ],
+    "author": "Sagarmatha Technical Institute",
+    "license": "MIT",
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
