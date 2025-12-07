@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const path = require('path');
 
 const contactRoutes = require('./routes/contact');
 const applicationRoutes = require('./routes/application');
@@ -29,9 +30,7 @@ const connectDB = async () => {
 
 connectDB();
 
-const path = require('path');
-
-// Routes
+// API Routes
 app.use('/api/contact', contactRoutes);
 app.use('/api/application', applicationRoutes);
 
@@ -44,20 +43,10 @@ app.get('/api/health', (req, res) => {
     });
 });
 
-// Serve static assets in production
-if (process.env.NODE_ENV === 'production') {
-    // Set static folder
-    app.use(express.static(path.join(__dirname, '../client/dist')));
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../client', 'dist', 'index.html'));
-    });
-} else {
-    // Default route for development
-    app.get('/', (req, res) => {
-        res.send('API is running...');
-    });
-}
+// Default route (backend only — no frontend serving)
+app.get('/', (req, res) => {
+    res.send('API is running...');
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
